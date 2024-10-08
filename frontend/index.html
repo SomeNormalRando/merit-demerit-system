@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>merit-demerit system</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<div id="add-points-container" class="bottom-input-container">
+		<div><span>
+			add <input type="number" id="input-add-points-number">
+			<select id="select-editing-column">
+				<option value="merit">merit points</option>
+				<option value="demerit">demerit points</option>
+			</select>
+			to <span id="editing-name-display"></span>
+		</span></div>
+		<div>
+			<button id="button-submit-edit">Submit</button>
+		</div>
+	</div>
+	<div id="add-new-row-container" class="bottom-input-container">
+		<h2>add new row</h2>
+		<div>
+			<label for="input-new-row-name">Name:</label>
+			<input id="input-new-row-name" type="text">
+		</div>
+		<div>
+			<label for="input-new-row-class">Class:</label>
+			<input id="input-new-row-class" type="text">
+		</div>
+		<div>
+			<button id="button-submit-add-new-row">Submit</button>
+		</div>
+	</div>
+	<table>
+		<caption id="table-caption"></caption>
+		<thead id="thead">
+			<tr>
+				<th rowspan="2">ID</th>
+				<th rowspan="2">Name</th>
+				<th rowspan="2">Class</th>
+				<th rowspan="1" colspan="3">Points</th>
+			</tr>
+			<tr>
+				<th>Merit</th>
+				<th>Demerit</th>
+				<th>Total</th>
+			</tr>
+		</thead>
+		<tbody id="tbody"></tbody>
+	</table>
+	<div>
+		<button id="button-refresh-database" class="secondary-button">refresh</button>
+		<button id="button-add-new-row" class="secondary-button">add</button>
+	</div>
+</body>
+</html>
