@@ -6,34 +6,44 @@
 	<title>merit-demerit system</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="style.css">
-	<script src="script.js" defer></script>
+	<script src="svelte-toast.js"></script>
+	<script src="script.js" type="module" defer></script>
 </head>
 <body>
-	<div id="add-points-container" class="bottom-input-container">
-		<div><span>
-			add <input type="number" id="input-add-points-number">
-			<select id="select-editing-column">
-				<option value="merit">merit points</option>
-				<option value="demerit">demerit points</option>
-			</select>
-			to <span id="editing-name-display"></span>
-		</span></div>
-		<div>
+	<div id="add-points-screen" class="screen">
+		<div id="add-points-container" class="bottom-input-container">
+			<h2>editing: <span id="editing-name-display">username placeholder</span></h2>
+			<div class="bottom-input-main-content">
+				<span>add</span>
+				<input type="number" id="input-add-points-number">
+				<select id="select-editing-column">
+					<option value="merit">merit points</option>
+					<option value="demerit">demerit points</option>
+				</select>
+			</div>
 			<button id="button-submit-edit">Submit</button>
 		</div>
 	</div>
-	<div id="add-new-row-container" class="bottom-input-container">
-		<h2>add new row</h2>
-		<div>
-			<label for="input-new-row-name">Name:</label>
-			<input id="input-new-row-name" type="text">
+	<div id="add-row-screen" class="screen">
+		<div id="add-row-container" class="bottom-input-container">
+			<h2>add new row:</h2>
+			<div class="bottom-input-main-content">
+				<label for="input-add-row-name">Name:</label>
+				<input id="input-add-row-name" type="text" class="long-input">
+				<label for="input-add-row-class">Class:</label>
+				<input id="input-add-row-class" type="text">
+			</div>
+			<button id="button-submit-add-row">Add</button>
 		</div>
-		<div>
-			<label for="input-new-row-class">Class:</label>
-			<input id="input-new-row-class" type="text">
-		</div>
-		<div>
-			<button id="button-submit-add-new-row">Submit</button>
+	</div>
+	<div id="delete-row-screen" class="screen">
+		<div id="delete-row-container" class="bottom-input-container">
+			<h2>delete row:</h2>
+			<div class="bottom-input-main-content">
+				<label for="input-delete-row-id">Row ID:</label>
+				<input id="input-delete-row-id" type="number">
+			</div>
+			<button id="button-submit-delete-row">Delete</button>
 		</div>
 	</div>
 	<table>
@@ -55,7 +65,8 @@
 	</table>
 	<div>
 		<button id="button-refresh-database" class="secondary-button">refresh</button>
-		<button id="button-add-new-row" class="secondary-button">add</button>
+		<button id="button-add-row" class="secondary-button">add</button>
+		<button id="button-delete-row" class="secondary-button">delete</button>
 	</div>
 </body>
 </html>

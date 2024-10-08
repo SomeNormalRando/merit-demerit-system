@@ -19,12 +19,12 @@ body {
 	color: var(--white);
 }
 button {
-	font-size: 1.6rem;
-	text-transform: capitalize;
 	padding: 1.5rem 3rem;
 	border: none;
 	background-color: var(--primary-col);
 	color: var(--background);
+	font-size: 1.6rem;
+	text-transform: capitalize;
 	transition-duration: 200ms;
 }
 button:hover {
@@ -35,28 +35,24 @@ button:hover {
 .secondary-button {
 	background-color: var(--secondary-col);
 }
-#button-refresh {
-	/* position: absolute; */
-	top: 1rem;
-	right: 1rem;
-}
 #button-add-number, #button-subtract-number {
 	width: 4rem;
 	height: 4rem;
 	padding: 0;
 }
 input {
-	padding: 1rem;
-	margin: 0 1rem;
-	/* width: 6rem; */
+	width: 6rem;
 	background-color: var(--white);
 	border: none;
+	font-size: 1.6rem;
+}
+input.long-input {
+	width: 18rem;
 }
 select {
-	padding: 1rem;
-	margin: 0 1rem;
 	background-color: var(--white);
 	border: none;
+	font-size: 1.6rem;
 }
 select:hover {
 	cursor: pointer;
@@ -103,25 +99,51 @@ td.cell-button-edit > button {
 	width: 100%;
 	height: 100%;
 }
+.screen {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	/* background-color: rgba(var(--background) / 0.5); */
+	background-color: rgba(12, 12, 12, 0.5);
+	/* backdrop-filter: blur(2px); */
+	/* opacity: 50%; */
+}
 .bottom-input-container {
 	position: absolute;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	width: 100%;
-	/* will be set to none when hidden */
 	display: flex;
 	align-items: center;
 	align-content: space-between;
-	justify-content: space-between;
+	justify-content: end;
 	flex-wrap: wrap;
-	padding: 2rem;
+	row-gap: 1.5rem;
+	padding: 3rem 2rem;
 	box-sizing: border-box;
 	background-color: var(--surface-16dp);
 }
-.bottom-input-container > div {
-	margin: 0.5rem 0;
+.bottom-input-container > h2 {
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 #editing-name-display {
-	font-weight: 600;
+	color: lightgreen;
+}
+.bottom-input-container select, .bottom-input-container input, .bottom-input-container button {
+	padding: 1.5rem 2rem;
+	margin: 0 1rem;
+}
+.bottom-input-main-content {
+	display: flex;
+	align-content: space-between;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
